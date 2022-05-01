@@ -1,0 +1,11 @@
+Model Information:
+* title:	Geometry Texture Effect Spheres
+* source:	https://sketchfab.com/3d-models/geometry-texture-effect-spheres-5058a0f82e744c27988304db012647d0
+* author:	SonicVisual (https://sketchfab.com/sonicvisual)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Geometry Texture Effect Spheres" (https://sketchfab.com/3d-models/geometry-texture-effect-spheres-5058a0f82e744c27988304db012647d0) by SonicVisual (https://sketchfab.com/sonicvisual) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
