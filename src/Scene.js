@@ -10,10 +10,7 @@ import React, { useRef } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
-
-export default function Model({ ...props }) {
-    
-
+export default function Model({ position, rotationSpeed }) {
     const group = useRef();
     const { nodes, materials, animations } = useGLTF('/model/scene.gltf');
     const { actions } = useAnimations(animations, group);
@@ -27,64 +24,46 @@ export default function Model({ ...props }) {
         roughness: 0.4
     });
 
-    // const globalMaterial2 = new THREE.MeshStandardMaterial({
-    //     color: 0x454545,
-    //     opacity: 1,
-    //     alphaTest: 0,
-    //     visible: true,
-    //     metalness: 1,
-    //     emissive: 0x000000,
-    //     roughness: 1,
-    // });
-
-    const mesh0 = useRef(null);
-    const mesh1 = useRef(null);
-    const mesh2 = useRef(null);
-    const mesh3 = useRef(null);
-    const mesh4 = useRef(null);
-
     useFrame(() => {
-        group.current.rotation.y += 0.001;
-        console.log()
+        group.current.rotation.y += rotationSpeed;
     });
 
+    // PAGE 1 position (right) = position={[1,0,-1]}
+    // PAGE 2 position (bottom) = position={[0.05,-1.3,-1]}
+    // PAGE 3 position (left) = position={[-1.1,0,-1]}
+
     return (
-        <group {...props} dispose={null}>
+        <group dispose={null}>
             <group>
                 <group >
                     <group scale={1}>
                         <group>
                             <group>
-                                <group ref={group}  name="Plane" position={[1,0,-1]} rotation={[Math.PI / 4, 0, 0]}>
+                                <group ref={group}  name="Plane" position={position} rotation={[Math.PI / 4, 0, 0]}>
                                 
                                     <mesh
                                         geometry={nodes.Plane_Material001_0.geometry}
                                         material={globalMaterial}
-                                        ref={mesh0}
                                     ></mesh>
 
                                     <mesh
                                         geometry={nodes.Plane_Material001_0_1.geometry}
                                         material={globalMaterial}
-                                        ref={mesh1}
                                     ></mesh>
 
                                     <mesh
                                         geometry={nodes.Plane_Material001_0_2.geometry}
                                         material={globalMaterial}
-                                        ref={mesh2}
                                     ></mesh>
 
                                     <mesh
                                         geometry={nodes.Plane_Material001_0_3.geometry}
                                         material={globalMaterial}
-                                        ref={mesh3}
                                     ></mesh>
 
                                     <mesh
                                         geometry={nodes.Plane_Material001_0_4.geometry}
                                         material={globalMaterial}
-                                        ref={mesh4}
                                     ></mesh>
                                 </group>
                             </group>

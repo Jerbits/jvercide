@@ -3,7 +3,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                WorkSans: ['Work Sans', 'sans-serif'],
+                Sora: ['Sora', 'sans-serif'],
                 Gelasio: ['Gelasio', 'serif']
             }
         }
